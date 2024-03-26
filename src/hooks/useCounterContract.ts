@@ -15,7 +15,7 @@ export function useCounterContract() {
     const counterContract = useAsyncInitialize(async () => {
         if (!client) return;
         const contract = new Counter(
-            Address.parse('EQCqInNz6pjEg5Bi91N-12ikBHmqQjy-Y83bbkPz_MCM-kHM')
+            Address.parse('EQBYLTm4nsvoqJRvs_L-IGNKwWs5RKe19HBK_lFadf19FUfb')
         );
         return client.open(contract) as OpenedContract<Counter>;
     }, [client]);
