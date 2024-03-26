@@ -7,7 +7,7 @@ export function useTonConnect(): { sender: Sender; connected: boolean } {
     return {
         sender: {
             send: async (args: SenderArguments) => {
-                tonconnectUI.sendTransaction({
+                await tonconnectUI.sendTransaction({
                     messages: [
                         {
                             address: args.to.toString(),
