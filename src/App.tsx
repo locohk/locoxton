@@ -40,13 +40,10 @@ function App() {
   // }
 
   const timeOutSetUnlockState = () => {
-    setLockState(true)
     setUnlocking(false)
   }
 
   const timeOutSetLockState = () => {
-    setLockState(false)
-    setUnLockthenLock(true)
     setLocking(false)
   }
 
@@ -122,11 +119,19 @@ function App() {
             onClick={() => {
               unlock()
               setUnlocking(true)
-              setTimeout(timeOutSetUnlockState, 20000)
+              setTimeout(timeOutSetUnlockState, 15000)
             }}
           >
             開鎖
           </a>  
+        }
+
+        {unlockConnected &&
+          <button onClick={() => {
+            setLockState(true)
+          }}>
+            確認開鎖
+          </button>
         }
 
         {unlocking && 
@@ -150,6 +155,15 @@ function App() {
           >
             鎖車
           </a>
+        }
+
+        {lockConnected &&
+          <button onClick={() => {
+            setLockState(false)
+            setUnLockthenLock(true)
+          }}>
+            確認鎖車
+          </button>
         }
 
         {locking &&
