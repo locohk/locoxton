@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export function unlockEMDBike(scanId: string | number) {
-    const [lockState, setLockState] = useState<null | Boolean>();
+export function UnlockEMDBike(scanId: string | number) {
+    const [lockState, setLockState] = useState<null | boolean>();
     const [idVal, setIdVal] = useState<null | string>();
 
     const unLockEMD = async() => { 

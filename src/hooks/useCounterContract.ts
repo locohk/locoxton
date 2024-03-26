@@ -7,7 +7,7 @@ import { Address, OpenedContract } from '@ton/core';
 
 export function useCounterContract() {
     const client = useTonClient();
-    const [val, setVal] = useState<null | String>();
+    const [val, setVal] = useState<null | string>();
     const { sender } = useTonConnect();
 
     const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));

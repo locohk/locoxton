@@ -2,14 +2,14 @@ import './App.css';
 import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react';
 import { useTonConnect } from './hooks/useTonConnect';
 import { useCounterContract } from './hooks/useCounterContract';
-import { lockEMDBike, unlockEMDBike } from './utils/api';
+import { lockEMDBike, UnlockEMDBike } from './utils/api';
 import { useState, useEffect } from 'react';
 import Image from '../public/locobike-v5.png'
 
 function App() {
   const { connected } = useTonConnect();
-  const { value, address, sendIncrement } = useCounterContract();
-  const { state, rideId, unlock } = unlockEMDBike('64');
+  const { sendIncrement } = useCounterContract();
+  const { state, rideId, unlock } = UnlockEMDBike('64');
   const { lock } = lockEMDBike('019450670')
   const [tonconnectUI] = useTonConnectUI();
 
