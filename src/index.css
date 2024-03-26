@@ -121,6 +121,11 @@ button:focus-visible {
   background-color: white;
 }
 
+.img-size {
+  width: 200px;
+  height: 200px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --tg-theme-bg-color: #131415;
