@@ -152,7 +152,7 @@ button:focus-visible {
   :root {
     /* --tg-theme-bg-color: #131415; */
     --tg-theme-bg-color: #fff;
-    --tg-theme-text-color: #fff;
+    --tg-theme-text-color: #131415;
     --tg-theme-button-color: #32a6fb;
     --tg-theme-button-text-color: #fff;
   }
