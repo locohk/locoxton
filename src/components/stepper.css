@@ -1,5 +1,5 @@
 .step-item {
-    @apply relative flex flex-col /*justify-center*/ items-center w-3/4
+    @apply relative flex flex-col /*justify-center*/ items-center w-3/4 text-xs
 }
 
 .step-item:not(:first-child):before {

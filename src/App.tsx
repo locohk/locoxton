@@ -150,7 +150,7 @@ function App() {
         }
 
         { (connected) && 
-          <label>BikeNumber: PAPC-64</label>
+          <label>Bike No: PAPC-64</label>
         }
 
         { (!connected) &&
