@@ -129,17 +129,24 @@ button:focus-visible {
   height: 200px;
 }
 
-.scanBtn {
-  background: #32a6fb;
-  border: 0;
-  border-radius: 50%;
-  display: flex;
-  /* justify-content: left;
-  align-items: start;
-  padding: 0; 
-  object-position: left;
-  float: left */
+.scanBtnContainer {
+  align-items: center;
+  width: 100%;
+  justify-content: left;
 }
+
+.scanBtnContainer .scanBtn {
+    background: #32a6fb;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    padding: 0; 
+    object-position: left;
+    float: left 
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

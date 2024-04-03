@@ -4,7 +4,7 @@ import { useTonConnect } from './hooks/useTonConnect';
 import { useCounterContract } from './hooks/useCounterContract';
 import { lockEMDBike, UnlockEMDBike } from './utils/api';
 import { useState } from 'react';
-import Image from '../public/locobike-v5.png'
+import Image from '../public/EMD.png'
 import ScanImage from '../public/scan_qrcode@3x.png'
 import Stepper from './components/Stepper'
 
@@ -136,16 +136,16 @@ function App() {
 
   const actionArray = [unlockAction, confirmUnlockAction, lockAction, confirmLockAction, paymentAction]
 
-
   
   return (
     <div className='App'>
       <div className='Container'>
-
-        <button className='scanBtn'><img src={ScanImage} width = "50"></img></button>
+        <div className='scanBtnContainer'>
+          <button className='scanBtn'><img src={ScanImage} width = "50"></img></button>
+        </div>
 
         { (connected) &&
-          <img src={Image} width="300"/>
+          <img src={Image} width="350"/>
 
         }
 
