@@ -1,3 +1,4 @@
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -68,9 +69,11 @@ button:focus-visible {
 } */
 
 :root {
-  --tg-theme-bg-color: #efeff3;
+  --tg-theme-bg-color: #fff;
+  /* --tg-theme-bg-color: #efeff3; */
   --tg-theme-button-color: #63d0f9;
-  --tg-theme-button-text-color: black;
+  /* --tg-theme-button-text-color: black; */
+  --tg-theme-button-text-color: white;
 }
 
 .App {
@@ -126,9 +129,22 @@ button:focus-visible {
   height: 200px;
 }
 
+.scanBtn {
+  background: #32a6fb;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  /* justify-content: left;
+  align-items: start;
+  padding: 0; 
+  object-position: left;
+  float: left */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --tg-theme-bg-color: #131415;
+    /* --tg-theme-bg-color: #131415; */
+    --tg-theme-bg-color: #fff;
     --tg-theme-text-color: #fff;
     --tg-theme-button-color: #32a6fb;
     --tg-theme-button-text-color: #fff;
@@ -145,3 +161,7 @@ button:focus-visible {
     padding: 10px;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities
