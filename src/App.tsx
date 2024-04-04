@@ -144,9 +144,11 @@ function App() {
   return (
     <div className='App'>
       <div className='Container'>
-        <div className='scanBtnContainer'>
-          <button className='scanBtn'><img src={ScanImage} width = "50"></img></button>
-        </div>
+        {connected &&
+          <div className='scanBtnContainer'>
+            <button className='scanBtn'><img src={ScanImage} width = "50"></img></button>
+          </div>
+        }
 
         { (connected) &&
           <img src={Image} width="350"/>
@@ -276,7 +278,22 @@ function App() {
         >
           OK
         </a>
+        }
 
+        {connected &&
+        <button 
+          type='button'
+          className={`Button Outlined`}
+          onClick={() => {
+              tonconnectUI.disconnect().then(() => {
+              }).catch((error) => {
+                console.log(error)
+              })
+            } 
+          }
+        >
+          Disconnect
+        </button>
         }
       </div>
     </div>

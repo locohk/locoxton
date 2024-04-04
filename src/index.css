@@ -104,6 +104,13 @@ button:focus-visible {
   width: 100%;
 }
 
+.Outlined {
+  background-color: transparent;
+  border: 1px solid var(--tg-theme-button-color);
+  color: var(--tg-theme-button-color);
+  cursor: initial;
+}
+
 .Disabled {
   filter: brightness(50%);
   cursor: initial;
