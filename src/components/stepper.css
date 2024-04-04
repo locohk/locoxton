@@ -42,3 +42,7 @@
 .btn:hover {
     filter: brightness(105%);
 }
+
+.btn:disabled {
+    background-color: #999;
+}

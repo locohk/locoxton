@@ -1,14 +1,17 @@
 import './App.css';
-import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react';
+import { TonConnectButton, useTonConnectUI, useTonAddress } from '@tonconnect/ui-react';
 import { useTonConnect } from './hooks/useTonConnect';
 import { useCounterContract } from './hooks/useCounterContract';
 import { lockEMDBike, UnlockEMDBike } from './utils/api';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from '../public/EMD.png'
 import ScanImage from '../public/scan_qrcode@3x.png'
 import Stepper from './components/Stepper'
 
+const DEMO_USER = import.meta.env.VITE_DEMO_USER;
+
 function App() {
+  const userFriendlyAddress = useTonAddress();
   const { connected } = useTonConnect();
   const { sendIncrement } = useCounterContract();
   const { /*state,*/ rideId, unlock } = UnlockEMDBike('64');
@@ -83,14 +86,15 @@ function App() {
 
   // }, [connected, unlockConnected, lockState, unlockthenLock, checkoutConnected, unlocking, locking, paySuccess]);
 
-  const unlockAction = {
+  const unlockAction = React.useMemo(() => ({
     name: 'Unlock',
+    disabled: userFriendlyAddress !== DEMO_USER,
     action: () => {
       unlock()
       //setUnlocking(true)
       //setTimeout(timeOutSetUnlockState, 15000)
     }
-  }
+  }), [userFriendlyAddress]);
 
   const confirmUnlockAction = {
     name: 'Confirm Unlock',
